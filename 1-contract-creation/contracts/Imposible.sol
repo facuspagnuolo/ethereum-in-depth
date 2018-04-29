@@ -1,7 +1,7 @@
 pragma solidity ^0.4.21;
 
-contract Imposible {
-  function Imposible() public {
+contract Impossible {
+  function Impossible() public {
     this.test();
   }
 
