@@ -13,7 +13,7 @@ contract Caller {
 
   function () public payable {
     emit CallerLog(gasleft());
-    impl.call.gas(msg.gas).value(msg.value)(msg.data);
+    require(impl.call.gas(msg.gas).value(msg.value)(msg.data));
     emit CallerLog(gasleft());
   }
 }
