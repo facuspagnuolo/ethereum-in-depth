@@ -1,4 +1,4 @@
-const MyContract = artifacts.require('MyContract.sol')
+const MyContract = artifacts.require('MyContract')
 
 contract('MyContract', ([_, creator]) => {
   it('can be deployed manually', async function () {
