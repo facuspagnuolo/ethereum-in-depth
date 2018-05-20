@@ -1,4 +1,4 @@
-const Caller = artifacts.require('Caller.sol')
+const Caller = artifacts.require('Caller')
 
 contract('Caller', accounts => {
   it('does not send all gas', async function () {

@@ -5,15 +5,15 @@ import "./Implementation.sol";
 contract Caller {
   event CallerLog(uint256 gas);
 
-  Implementation public impl;
+  Implementation public implementation;
 
   function Caller() public {
-    impl = new Implementation();
+    implementation = new Implementation();
   }
 
   function () public payable {
     emit CallerLog(gasleft());
-    impl.call.gas(gasleft()).value(msg.value)(msg.data);
+    implementation.call.gas(gasleft()).value(msg.value)(msg.data);
     emit CallerLog(gasleft());
   }
 }

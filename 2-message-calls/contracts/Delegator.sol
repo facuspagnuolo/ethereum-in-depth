@@ -1,13 +1,14 @@
 pragma solidity ^0.4.21;
 
+import "./Implementation.sol";
+
 contract Delegator {
   event DelegatorLog(uint256 gas);
 
-  address public implementation;
+  Implementation public implementation;
 
-  function Delegator(address _implementation) public {
-    require(_implementation != address(0));
-    implementation = _implementation;
+  function Delegator() public {
+    implementation = new Implementation();
   }
 
   function () public payable {

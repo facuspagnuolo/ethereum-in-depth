@@ -1,12 +1,10 @@
-const Delegator = artifacts.require('Delegator.sol')
-const Implementation = artifacts.require('Implementation.sol')
+const Delegator = artifacts.require('Delegator')
 
 contract('Delegator', accounts => {
   it('does not send all gas', async function () {
-    const implementation = await Implementation.new();
-    const proxy = await Delegator.new(implementation.address);
+    const delegator = await Delegator.new();
 
-    const { logs } = await proxy.sendTransaction({ from: accounts[0], value: 1000, gasPrice: 0, gas: 640000 });
+    const { logs } = await delegator.sendTransaction({ from: accounts[0], value: 1000, gasPrice: 0, gas: 640000 });
 
     assert(logs.length === 2);
 
