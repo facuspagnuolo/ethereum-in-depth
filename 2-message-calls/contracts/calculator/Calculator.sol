@@ -5,8 +5,8 @@ import "./Addition.sol";
 import "./ResultStorage.sol";
 
 contract Calculator is ResultStorage {
-  Product internal product;
-  Addition internal addition;
+  Product public product;
+  Addition public addition;
 
   function Calculator() public {
     product = new Product();
