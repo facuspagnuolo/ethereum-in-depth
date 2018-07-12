@@ -1,13 +1,13 @@
 pragma solidity ^0.4.21;
 
 contract Calldata {
-  function tail(bytes32 text, uint256 offset) public view returns (bytes32 tail) {
+  function add(uint256 _a, uint256 _b) public view returns (uint256 result) {
     assembly {
-      let ptr := mload(0x40)
-      let start := add(4, offset)
-      let size := sub(add(4, 32), offset)
-      calldatacopy(ptr, start, size)
-      tail := mload(ptr)
+      let a := mload(0x40)
+      let b := add(a, 32)
+      calldatacopy(a, 4, 32)
+      calldatacopy(b, add(4, 32), 32)
+      result := add(mload(a), mload(b))
     }
   }
 }

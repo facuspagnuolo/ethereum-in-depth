@@ -11,7 +11,7 @@ contract Storage {
     account = this;
     array.push(10);
     array.push(100);
-    map[1] = 1;
-    map[2] = 2;
+    map[1] = 9;
+    map[2] = 10;
   }
 }

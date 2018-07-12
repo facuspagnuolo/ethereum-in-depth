@@ -29,11 +29,11 @@ contract('Storage', () => {
     let key = '0000000000000000000000000000000000000000000000000000000000000001'
     let position = web3.sha3(key + ind, { encoding: "hex" })
     let item = await web3.eth.getStorageAt(this.storageAddress, position)
-    assert.equal(item, 1)
+    assert.equal(item, 9)
 
     key = '0000000000000000000000000000000000000000000000000000000000000002'
     position = web3.sha3(key + ind, { encoding: "hex" })
     item = await web3.eth.getStorageAt(this.storageAddress, position)
-    assert.equal(item, 2)
+    assert.equal(item, 10)
   })
 })
